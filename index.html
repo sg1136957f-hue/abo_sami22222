@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[اسم المشروع]</title>
+  <title>مطعم Sweet and Sour</title>
   
   <!-- CSS الخاص بمكتبة @n8n/chat -->
   <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
@@ -11,13 +11,14 @@
   <style>
     /* المتغيرات والتنسيقات الأساسية */
     :root {
-      --primary-color: #2563eb;
-      --primary-hover: #1d4ed8;
-      --bg-color: #f8fafc;
+      --primary-color: #d97706;
+      --primary-hover: #b45309;
+      --accent-color: #ef4444;
+      --bg-color: #fffbe6;
       --card-bg: #ffffff;
-      --text-main: #0f172a;
-      --text-muted: #475569;
-      --border-color: #e2e8f0;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --border-color: #fef08a;
     }
 
     * {
@@ -39,10 +40,11 @@
     /* الهيدر وشريط التنقل */
     header {
       background-color: var(--card-bg);
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid #f3f4f6;
       position: sticky;
       top: 0;
       z-index: 10;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     nav {
@@ -55,14 +57,14 @@
     }
 
     .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
+      font-size: 1.35rem;
+      font-weight: 800;
       color: var(--primary-color);
     }
 
     .nav-links {
       display: flex;
-      gap: 1rem;
+      gap: 1.25rem;
       list-style: none;
     }
 
@@ -70,6 +72,7 @@
       text-decoration: none;
       color: var(--text-muted);
       font-size: 0.95rem;
+      font-weight: 600;
       transition: color 0.2s;
     }
 
@@ -81,7 +84,7 @@
     .hero {
       padding: 4rem 1.5rem;
       text-align: center;
-      background: linear-gradient(180deg, var(--card-bg) 0%, var(--bg-color) 100%);
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg-color) 100%);
     }
 
     .hero-content {
@@ -97,27 +100,29 @@
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--text-muted);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
     }
 
     .btn-primary {
       display: inline-block;
       background-color: var(--primary-color);
       color: #ffffff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 9999px;
       text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.2s;
+      font-weight: 700;
+      transition: background-color 0.2s, transform 0.1s;
+      box-shadow: 0 4px 6px -1px rgba(217, 119, 6, 0.2);
     }
 
     .btn-primary:hover {
       background-color: var(--primary-hover);
+      transform: translateY(-1px);
     }
 
-    /* قسم الخدمات */
+    /* قسم المنيو والخدمات */
     .services {
       padding: 3rem 1.5rem;
       max-width: 1100px;
@@ -129,26 +134,38 @@
       text-align: center;
       font-size: 1.75rem;
       margin-bottom: 2rem;
+      font-weight: 800;
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
     }
 
     .service-card {
       background-color: var(--card-bg);
       border: 1px solid var(--border-color);
-      padding: 1.5rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      padding: 1.75rem 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .service-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
     }
 
     .service-card h3 {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       margin-bottom: 0.5rem;
-      color: var(--primary-color);
+      color: var(--text-main);
     }
 
     .service-card p {
@@ -160,7 +177,7 @@
     .contact {
       padding: 3rem 1.5rem;
       background-color: var(--card-bg);
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid #f3f4f6;
       margin-top: auto;
     }
 
@@ -185,9 +202,10 @@
     .contact-item {
       font-size: 1rem;
       color: var(--text-main);
+      font-weight: 600;
     }
 
-    /* تخصيص موقع الشات في الأسفل على اليمين */
+    /* ضبط موقع زر الشات أسفل اليمين */
     :root {
       --chat--toggle--position-left: auto;
       --chat--toggle--position-right: 20px;
@@ -199,10 +217,10 @@
   <!-- الهيدر -->
   <header>
     <nav>
-      <div class="logo">[اسم المشروع]</div>
+      <div class="logo">Sweet & Sour 🍕🍰</div>
       <ul class="nav-links">
         <li><a href="#hero">الرئيسية</a></li>
-        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#menu">قائمة الطعام</a></li>
         <li><a href="#contact">تواصل معنا</a></li>
       </ul>
     </nav>
@@ -211,27 +229,35 @@
   <!-- قسم الترحيب -->
   <section id="hero" class="hero">
     <div class="hero-content">
-      <h1>مرحبًا بك في [اسم المشروع]</h1>
-      <p>[اكتب هنا وصف مختصر للخدمات أو المنيو بسطرين]</p>
-      <a href="#contact" class="btn-primary">تواصل معنا الآن</a>
+      <h1>مرحبًا بك في مطعم Sweet and Sour</h1>
+      <p>نقدم لك تشكيلة شهية تجمع بين المالح والحلو: أشهى أنواع البيتزا والكراسون الطازج، بالإضافة إلى أفخم الجاتوه والحلويات الشرقية الأصيلة.</p>
+      <a href="#contact" class="btn-primary">اطلب الآن</a>
     </div>
   </section>
 
-  <!-- قسم الخدمات -->
-  <section id="services" class="services">
-    <h2 class="section-title">خدماتنا</h2>
+  <!-- قسم المنيو والخدمات -->
+  <section id="menu" class="services">
+    <h2 class="section-title">قائمة المأكولات والحلويات</h2>
     <div class="services-grid">
       <div class="service-card">
-        <h3>الخدمة الأولى / الصنف الأول</h3>
-        <p>وصف مختصر للخدمة الأولى أو الصنف المقدم من قبل المشروع.</p>
+        <div class="icon">🍕</div>
+        <h3>بيتزا</h3>
+        <p>بيتزا هشة ومحشوة بأجود أنواع الجبن والمكونات الطازجة بعجينة مميزة.</p>
       </div>
       <div class="service-card">
-        <h3>الخدمة الثانية / الصنف الثاني</h3>
-        <p>وصف مختصر للخدمة الثانية أو الصنف المقدم من قبل المشروع.</p>
+        <div class="icon">🥐</div>
+        <h3>كراسون</h3>
+        <p>كراسون فرنسي هش وطازج محشو بالسمن الطبيعي، الشوكولاتة أو الجبن.</p>
       </div>
       <div class="service-card">
-        <h3>الخدمة الثالثة / الصنف الثالث</h3>
-        <p>وصف مختصر للخدمة الثالثة أو الصنف المقدم من قبل المشروع.</p>
+        <div class="icon">🍰</div>
+        <h3>جاتوه</h3>
+        <p>قوالب وقطع جاتوه فاخرة لمناسباتكم ولحظاتكم السعيدة بنكهات غنية.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🍩</div>
+        <h3>حلويات شرقية</h3>
+        <p>تشكيلة واسعة من الحلويات الشرقية العريقة المحضرة على أصولها.</p>
       </div>
     </div>
   </section>
@@ -240,10 +266,10 @@
   <section id="contact" class="contact">
     <div class="contact-container">
       <h2 class="section-title">تواصل معنا</h2>
-      <p>نحن هنا لمساعدتك والإجابة على كل استفساراتك. يمكنك التواصل معنا عبر الوسائل التالية:</p>
+      <p>يسعدنا استقبال طلباتكم واستفساراتكم في أي وقت. تواصل معنا مباشر أو عبر الشات!</p>
       <div class="contact-info">
-        <div class="contact-item">📧 البريد الإلكتروني: info@example.com</div>
-        <div class="contact-item">📞 الهاتف: 966500000000+</div>
+        <div class="contact-item">📧 البريد الإلكتروني: contact@sweetandsour.com</div>
+        <div class="contact-item">📞 الهاتف / الواتساب: 966500000000+</div>
       </div>
     </div>
   </section>
@@ -270,4 +296,4 @@
   </script>
 
 </body>
-  </html>
+</html>
