@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[اسم المشروع]</title>
+  
+  <!-- CSS الخاص بمكتبة @n8n/chat -->
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+
+  <style>
+    /* المتغيرات والتنسيقات الأساسية */
+    :root {
+      --primary-color: #2563eb;
+      --primary-hover: #1d4ed8;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border-color: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* الهيدر وشريط التنقل */
+    header {
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    /* قسم الترحيب Hero Section */
+    .hero {
+      padding: 4rem 1.5rem;
+      text-align: center;
+      background: linear-gradient(180deg, var(--card-bg) 0%, var(--bg-color) 100%);
+    }
+
+    .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+
+    /* قسم الخدمات */
+    .services {
+      padding: 3rem 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* قسم تواصل معنا */
+    .contact {
+      padding: 3rem 1.5rem;
+      background-color: var(--card-bg);
+      border-top: 1px solid var(--border-color);
+      margin-top: auto;
+    }
+
+    .contact-container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .contact-item {
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    /* تخصيص موقع الشات في الأسفل على اليمين */
+    :root {
+      --chat--toggle--position-left: auto;
+      --chat--toggle--position-right: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <header>
+    <nav>
+      <div class="logo">[اسم المشروع]</div>
+      <ul class="nav-links">
+        <li><a href="#hero">الرئيسية</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- قسم الترحيب -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>مرحبًا بك في [اسم المشروع]</h1>
+      <p>[اكتب هنا وصف مختصر للخدمات أو المنيو بسطرين]</p>
+      <a href="#contact" class="btn-primary">تواصل معنا الآن</a>
+    </div>
+  </section>
+
+  <!-- قسم الخدمات -->
+  <section id="services" class="services">
+    <h2 class="section-title">خدماتنا</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>الخدمة الأولى / الصنف الأول</h3>
+        <p>وصف مختصر للخدمة الأولى أو الصنف المقدم من قبل المشروع.</p>
+      </div>
+      <div class="service-card">
+        <h3>الخدمة الثانية / الصنف الثاني</h3>
+        <p>وصف مختصر للخدمة الثانية أو الصنف المقدم من قبل المشروع.</p>
+      </div>
+      <div class="service-card">
+        <h3>الخدمة الثالثة / الصنف الثالث</h3>
+        <p>وصف مختصر للخدمة الثالثة أو الصنف المقدم من قبل المشروع.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم تواصل معنا -->
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <h2 class="section-title">تواصل معنا</h2>
+      <p>نحن هنا لمساعدتك والإجابة على كل استفساراتك. يمكنك التواصل معنا عبر الوسائل التالية:</p>
+      <div class="contact-info">
+        <div class="contact-item">📧 البريد الإلكتروني: info@example.com</div>
+        <div class="contact-item">📞 الهاتف: 966500000000+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- تضمين مكتبة Chat n8n -->
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+    createChat({
+      webhookUrl: 'https://wert123-fd.app.n8n.cloud/webhook/4f43599c-cc46-4c28-91db-2a8d0677ece6/chat',
+      initialMessages: [
+        'أهلاً وسهلاً 👋',
+        'كيف أقدر أساعدك اليوم؟'
+      ],
+      i18n: {
+        en: {
+          title: 'أهلاً بك 👋',
+          subtitle: 'اسألني أي شي',
+          inputPlaceholder: 'اكتب رسالتك...',
+          getStarted: 'محادثة جديدة'
+        }
+      }
+    });
+  </script>
+
+</body>
+  </html>
